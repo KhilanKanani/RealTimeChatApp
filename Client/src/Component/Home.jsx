@@ -13,7 +13,7 @@ import GetMessages from '../FindCurrentUser/GetMessages';
 
 const Home = () => {
 
-    const SERVER_URL = "http://localhost:1000";
+    const SERVER_URL = "https://real-time-chat-app-seven-tan.vercel.app";
 
     GetMessages();
     GetOtherUser();

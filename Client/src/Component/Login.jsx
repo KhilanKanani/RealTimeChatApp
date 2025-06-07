@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const Login = () => {
 
-    const SERVER_URL = "http://localhost:1000";    
+    const SERVER_URL = "https://real-time-chat-app-seven-tan.vercel.app";
     
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");

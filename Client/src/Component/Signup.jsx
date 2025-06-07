@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
 
-    const SERVER_URL = "http://localhost:1000";
+    const SERVER_URL = "https://real-time-chat-app-seven-tan.vercel.app";
 
     const [userName, setuserName] = useState("");
     const [email, setemail] = useState("");

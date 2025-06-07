@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 
 const Logout = () => {
     
-    const SERVER_URL = "http://localhost:1000";
+    const SERVER_URL = "https://real-time-chat-app-seven-tan.vercel.app";
 
     const navigate = useNavigate();
     const dispatch = useDispatch();

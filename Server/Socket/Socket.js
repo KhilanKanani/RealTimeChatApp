@@ -9,7 +9,7 @@ const server = http.createServer(app);
 // Create Io And Connect Server To Frontend
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5173",
+        origin: process.env.CLIENT_URL,
         credentials: true
     }
 })

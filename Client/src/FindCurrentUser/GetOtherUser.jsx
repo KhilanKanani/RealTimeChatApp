@@ -5,7 +5,7 @@ import { setOtherUserData } from '../Redux/UserSlice';
 
 const GetOtherUser = () => {
 
-    const SERVER_URL = "http://localhost:1000";
+    const SERVER_URL = "https://real-time-chat-app-seven-tan.vercel.app";
     const dispatch = useDispatch();
 
     useEffect(() => {

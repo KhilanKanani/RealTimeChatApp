@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 
 const GetMessages = () => {
 
-    const SERVER_URL = "http://localhost:1000";
+    const SERVER_URL = "https://real-time-chat-app-seven-tan.vercel.app";
     
     const dispatch = useDispatch();
     const selectedUser = useSelector(state => state.user.selectedUser);
