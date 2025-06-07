@@ -1,0 +1,15 @@
+:: Client ::
+
+=> npm create vite
+=> npm i
+=> npm tailwindcss @tailwind/vite
+=> npm i react-router-dom
+=> npm i @reduxjs/toolkit
+=> npm i react-redux
+=> npm i react-hot-toast
+=> npm i axios
+=> npm i cors
+=> npm i redux-thunk
+=> npm i emoji-picker-react
+=> npm i socket.io-client
+=> npm i dotenv

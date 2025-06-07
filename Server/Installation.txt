@@ -1,0 +1,15 @@
+:: Server ::
+
+=> npm init -y
+=> npm i express nodemon mongoose
+=> npm i dotenv
+=> npm i cookie-parser 
+=> npm i jsonwebtoken
+=> npm i cors
+=> npm i cloudinary
+=> npm i multer
+=> npm i socket.io
+
+:: Deploy On Vercel ::
+=> npm install -g vercel
+=> vercel
