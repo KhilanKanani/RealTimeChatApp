@@ -4,11 +4,10 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 import { setIsLoading, setOtherUserData, setSelectedUser, setUserdata } from '../Redux/UserSlice';
 import { useEffect } from 'react';
+import { SERVER_URL } from '../main';
 
 const Logout = () => {
     
-    const SERVER_URL = "https://real-time-chat-app-seven-tan.vercel.app";
-
     const navigate = useNavigate();
     const dispatch = useDispatch();
 

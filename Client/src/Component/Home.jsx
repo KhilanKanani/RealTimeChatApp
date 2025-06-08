@@ -10,10 +10,9 @@ import axios from 'axios';
 import { setMessages } from '../Redux/MessageSlice';
 import toast from "react-hot-toast"
 import GetMessages from '../FindCurrentUser/GetMessages';
+import { SERVER_URL } from '../main';
 
 const Home = () => {
-
-    const SERVER_URL = "https://real-time-chat-app-seven-tan.vercel.app";
 
     GetMessages();
     GetOtherUser();

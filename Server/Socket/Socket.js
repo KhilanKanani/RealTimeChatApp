@@ -9,7 +9,7 @@ const server = http.createServer(app);
 // Create Io And Connect Server To Frontend
 const io = new Server(server, {
     cors: {
-        origin: process.env.CLIENT_URL,
+        origin: `${process.env.CLIENT_URL}`,
         credentials: true
     }
 })

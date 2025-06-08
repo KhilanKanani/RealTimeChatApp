@@ -9,11 +9,10 @@ import { useEffect } from 'react'
 import FetchCurrentUser from './FindCurrentUser/GetCurrentUser'
 import { io } from "socket.io-client"
 import { setOnlineUser, setSocket } from './Redux/UserSlice'
+import { SERVER_URL } from './main'
 
 function App() {
   
-  const SERVER_URL = import.meta.env.SERVER_URL;
-
   const dispatch = useDispatch();
   const { userdata, isLoading } = useSelector(state => state.user || {});
 

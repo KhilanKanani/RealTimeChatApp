@@ -4,10 +4,9 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setIsLoading, setUserdata } from '../Redux/UserSlice';
 import axios from 'axios';
+import { SERVER_URL } from '../main';
 
 const Login = () => {
-
-    const SERVER_URL = "https://real-time-chat-app-seven-tan.vercel.app";
     
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");

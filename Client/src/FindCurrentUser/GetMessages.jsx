@@ -2,10 +2,9 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMessages } from '../Redux/MessageSlice';
 import { useEffect } from 'react';
+import { SERVER_URL } from '../main';
 
 const GetMessages = () => {
-
-    const SERVER_URL = "https://real-time-chat-app-seven-tan.vercel.app";
     
     const dispatch = useDispatch();
     const selectedUser = useSelector(state => state.user.selectedUser);

@@ -4,10 +4,9 @@ import toast from 'react-hot-toast';
 import { useDispatch } from 'react-redux';
 import { setIsLoading, setUserdata } from '../Redux/UserSlice';
 import { useNavigate } from 'react-router-dom';
+import { SERVER_URL } from '../main';
 
 const Signup = () => {
-
-    const SERVER_URL = "https://real-time-chat-app-seven-tan.vercel.app";
 
     const [userName, setuserName] = useState("");
     const [email, setemail] = useState("");

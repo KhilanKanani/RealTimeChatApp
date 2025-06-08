@@ -4,10 +4,9 @@ import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setUserdata } from '../Redux/UserSlice';
+import { SERVER_URL } from '../main';
 
 const Profile = () => {
-
-    const SERVER_URL = "https://real-time-chat-app-seven-tan.vercel.app";
 
     const navigate = useNavigate();
     const dispatch = useDispatch();

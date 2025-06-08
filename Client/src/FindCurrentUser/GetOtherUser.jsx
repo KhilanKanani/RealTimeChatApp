@@ -2,10 +2,10 @@ import axios from 'axios'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setOtherUserData } from '../Redux/UserSlice';
+import { SERVER_URL } from '../main';
 
 const GetOtherUser = () => {
 
-    const SERVER_URL = "https://real-time-chat-app-seven-tan.vercel.app";
     const dispatch = useDispatch();
 
     useEffect(() => {
