@@ -29,13 +29,6 @@ app.use("/api/auth", authRoute);
 app.use("/api/user", userRoute);
 app.use("/api/message", messageRoute);
 
-app.get("/" , (req,res) => {
-    res.send({
-        success:true,
-        meesage:"Your App Running..."
-    })
-})
-
 server.listen(port, () => {
     connectDB();
     console.log(`Your App Running In Port Number ${port}...`);
