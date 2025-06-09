@@ -5,7 +5,7 @@ import { Toaster } from 'react-hot-toast'
 import { Provider } from 'react-redux'
 import Store from './Store/Store.jsx'
 
-export const SERVER_URL = "https://real-time-chat-app-seven-tan.vercel.app";
+export const SERVER_URL = "http://localhost:1000";
 
 createRoot(document.getElementById('root')).render(
   <Provider store={Store} >
