@@ -99,11 +99,11 @@ const Home = () => {
     }
 
     return (
-        <div className='w-full h-[100vh] flex'>
+        <div className='w-full h-[100vh] overflow-auto flex'>
             {/* :: SideBar :: */}
-            <div className='lg:w-[30%] w-[100vw] h-full bg-green-100 overflow-hidden'>
+            <div className='lg:w-[30%] w-[100%] h-full bg-green-100 overflow-hidden relative'>
                 {/* Top */}
-                <div className='h-[250px] p-5 bg-green-800 rounded-bl-[100px] rounded-br-[100px] flex flex-col'>
+                <div className='h-[29vh] p-5 bg-green-800 rounded-bl-[100px] rounded-br-[100px] flex flex-col'>
                     <div className='mb-[15px] flex items-center gap-1'>
                         <img src="ChatLogo.png" className='h-6.5 w-6' />
                         <p className='text-green-400 text-xl font-bold'>Messenger</p>
@@ -143,8 +143,8 @@ const Home = () => {
                     </div>
                 </div>
 
-                 {/* Ṃiddle */}
-                <div className='h-[61vh] w-full overflow-auto mt-3 outline-0'>
+                {/* Ṃiddle */}
+                <div className='h-[71vh] w-full overflow-y-scroll mt-3 pb-19 outline-0'>
                     {
                         filterData?.length > 0 ? filterData.map((user) => {
                             return (
@@ -165,7 +165,7 @@ const Home = () => {
                 </div>
 
                 {/* Down */}
-                <div className='bg-green-200 w-full flex items-center gap-3 h-15 absolute bottom-0'>
+                <div className='bg-green-200 w-full flex items-center gap-3 h-14 absolute bottom-0'>
                     <div className='bg-green-300 p-2 h-10 w-10 ml-[8px] rounded-full hover:shadow-2xl shadow-green-900 transition-all duration-400' onClick={() => navigate("/logout")}>
                         <img src="LogoutLogo.jpg" className='h-full w-full cursor-pointer rounded-full' />
                     </div>
