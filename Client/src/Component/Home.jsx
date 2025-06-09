@@ -144,7 +144,7 @@ const Home = () => {
                 </div>
 
                  {/* Ṃiddle */}
-                <div className='h-[70vh] w-full overflow-auto mt-3 pb-20 outline-0'>
+                <div className='h-[61vh] w-full overflow-auto mt-3 pb-20 outline-0'>
                     {
                         filterData?.length > 0 ? filterData.map((user) => {
                             return (
