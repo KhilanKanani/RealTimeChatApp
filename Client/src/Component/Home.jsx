@@ -101,9 +101,9 @@ const Home = () => {
     return (
         <div className='w-full h-[100vh] overflow-auto flex'>
             {/* :: SideBar :: */}
-            <div className='lg:w-[30%] w-[100%] h-full bg-green-100 overflow-hidden flex flex-col justify-between'>
+            <div className='lg:w-[30%] w-[100%] h-full bg-green-100 overflow-hidden flex flex-col'>
                 {/* Top */}
-                <div className='h-[250px] p-5 bg-green-800 rounded-bl-[100px] rounded-br-[100px] flex flex-col'>
+                <div className='outline-0 h-[250px] w-full p-5 bg-green-800 sm:rounded-b-[100px] rounded-b-[80px] flex flex-col'>
                     <div className='mb-[15px] flex items-center gap-1'>
                         <img src="ChatLogo.png" className='h-6.5 w-6' />
                         <p className='text-green-400 text-xl font-bold'>Messenger</p>
@@ -127,7 +127,7 @@ const Home = () => {
                         <img src="SearchLogo.jpg" className='absolute top-5 h-11 w-11 rounded-full overflow-hidden' onClick={() => setsearch(true)} />
                     </div>
 
-                    <div className='flex gap-2 mt-[-6px] ml-[50px] lg:w-[90%] w-[94%] overflow-scroll cursor-pointer'>
+                    <div className='flex gap-2 mt-[-6px] ml-[50px] xl:w-[91%] lg:w-[82%] md:w-[93%] w-[83.5%] overflow-scroll cursor-pointer outline-0'>
                         {
                             !search && otherUserData?.user.map((otherUser) => (
                                 onlineUser?.includes(otherUser?._id) &&
@@ -143,45 +143,47 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/* Ṃiddle */}
-                <div className='h-[71vh] w-full overflow-y-scroll mt-3 mb-3 outline-0'>
-                    {
-                        filterData?.length > 0 ? filterData.map((user) => {
-                            return (
-                                <div key={user?._id} className='rounded-lg cursor-pointer border-b-1 border-green-800 flex items-center justify-between' onClick={() => (dispatch(setSelectedUser(user)), setinput(""), setfrontendImage(""), setbackendImage(""), setshowEmoji(false))}>
-                                    <div className='relative w-full flex gap-3 items-center border-green-300  rounded-xl duration-300 transition-all p-1.5 m-1 hover:bg-green-300'>
-                                        <img src={user?.image} className="h-11 w-11 rounded-full" />
-                                        {onlineUser?.includes(user?._id) && <div className='absolute bottom-2 left-9.5 h-3 w-3 rounded-full bg-green-500'></div>}
-                                        <h1 className='text-lg mt-[-15px]'>{user?.fullName}</h1>
-                                        {/* {
+                <div className='h-[72%] flex flex-col justify-between'>
+                    {/* Ṃiddle */}
+                    <div className='h-full w-full overflow-y-scroll mt-3 mb-3 outline-0'>
+                        {
+                            filterData?.length > 0 ? filterData.map((user) => {
+                                return (
+                                    <div key={user?._id} className='rounded-lg cursor-pointer border-b-1 border-green-800 flex items-center justify-between' onClick={() => (dispatch(setSelectedUser(user)), setinput(""), setfrontendImage(""), setbackendImage(""), setshowEmoji(false))}>
+                                        <div className='relative w-full flex gap-3 items-center border-green-300  rounded-xl duration-300 transition-all p-1.5 m-1 hover:bg-green-300'>
+                                            <img src={user?.image} className="h-11 w-11 rounded-full" />
+                                            {onlineUser?.includes(user?._id) && <div className='absolute bottom-2 left-9.5 h-3 w-3 rounded-full bg-green-500'></div>}
+                                            <h1 className='text-lg mt-[-15px]'>{user?.fullName}</h1>
+                                            {/* {
                                             selectedUser &&
                                             <p className='h-6 w-6 absolute right-2 bg-green-500 rounded-full flex justify-center items-center text-xs font-bold'>1</p>
                                         } */}
+                                        </div>
                                     </div>
-                                </div>
-                            )
-                        }) : <div className='flex justify-center'><p>User Not Found...</p></div>
-                    }
-                </div>
-
-                {/* Down */}
-                <div className='bg-green-200 w-full flex items-center gap-3 h-15'>
-                    <div className='bg-green-300 p-2 h-10 w-10 ml-[8px] rounded-full hover:shadow-2xl shadow-green-900 transition-all duration-400' onClick={() => navigate("/logout")}>
-                        <img src="LogoutLogo.jpg" className='h-full w-full cursor-pointer rounded-full' />
+                                )
+                            }) : <div className='flex justify-center'><p>User Not Found...</p></div>
+                        }
                     </div>
-                    <p className='opacity-80'>&copy;2025 - Present Kk's Pvt Ltd...</p>
+
+                    {/* Down */}
+                    <div className='bg-green-200 w-full flex items-center gap-3 h-20 sm:h-15'>
+                        <div className='bg-green-300 p-2 h-10 w-10 ml-[8px] rounded-full hover:shadow-2xl shadow-green-900 transition-all duration-400' onClick={() => navigate("/logout")}>
+                            <img src="LogoutLogo.jpg" className='h-full w-full cursor-pointer rounded-full' />
+                        </div>
+                        <p className='opacity-80'>&copy;2025 - Present Kk's Pvt Ltd...</p>
+                    </div>
                 </div>
             </div>
 
             {/* :: MessageBar :: */}
-            <div className='lg:w-[70%] border-l-1 border-green-500 lg:flex hidden h-[100vh] bg-green-50 flex-col justify-between'>
+            <div className='lg:w-[70%] border-l-1 border-green-500 lg:flex hidden h-[100vh] bg-green-50 flex-col justify-between' onKeyDown={(e) => { e.key === 'Backspace' && (dispatch(setSelectedUser(null)), setfrontendImage(""), setshowEmoji(false)) }}>
                 {/* :: Top :: */}
                 <div>
                     {
                         selectedUser ? <div className='bg-green-200 h-[70px] border-b-1 border-green-500 rounded-b-2xl flex items-center pl-5'>
                             <div className='flex items-center gap-2 relative'>
                                 <img src="backArrow.png" className="h-8 w-5 rounded-full cursor-pointer" onClick={() => (dispatch(setSelectedUser(null)), setfrontendImage(""), setshowEmoji(false))} />
-                                <img src={selectedUser?.image || "ChatlyDp.png"} className="h-11 w-11 rounded-full bg-white" />
+                                <img src={selectedUser?.image || "ChatlyDp.png"} className="h-11 w-11 rounded-full bg-white cursor-pointer" onClick={() => window.open(selectedUser?.image, "_blank")} />
                                 {onlineUser?.includes(selectedUser?._id) && <div className='absolute bottom-0.5 left-15 h-3 w-3 rounded-full bg-green-500'></div>}
                                 <h1 className='text-xl font-bold text-black mt-[-15px]'>{selectedUser?.fullName || "User"}</h1>
                             </div>
@@ -241,10 +243,10 @@ const Home = () => {
                         {/* :: Top :: */}
                         <div>
                             {
-                                selectedUser ? <div className='bg-green-200 h-[70px] border-b-1 border-green-500 rounded-b-2xl flex items-center pl-5'>
+                                selectedUser ? <div className='bg-green-200 mt-auto h-[70px] border-b-1 border-green-500 rounded-b-2xl flex items-center pl-5'>
                                     <div className='flex items-center gap-2 relative'>
                                         <img src="backArrow.png" className="h-8 w-5 rounded-full cursor-pointer" onClick={() => (dispatch(setSelectedUser(null)), setfrontendImage(""), setshowEmoji(false))} />
-                                        <img src={selectedUser?.image || "ChatlyDp.png"} className="h-11 w-11 rounded-full bg-white" />
+                                        <img src={selectedUser?.image || "ChatlyDp.png"} className="h-11 w-11 rounded-full bg-white cursor-pointer" onClick={() => window.open(selectedUser?.image, "_blank")} />
                                         {onlineUser?.includes(selectedUser?._id) && <div className='absolute bottom-0.5 left-15 h-3 w-3 rounded-full bg-green-500'></div>}
                                         <h1 className='text-xl font-bold text-black mt-[-15px]'>{selectedUser?.fullName || "User"}</h1>
                                     </div>
@@ -259,7 +261,7 @@ const Home = () => {
                         </div>
 
                         {/* :: Messages :: */}
-                        <div ref={scrollMsgMobile} className='h-[80%] flex flex-col gap-3 overflow-auto' onClick={() => setshowEmoji(false)}>
+                        <div ref={scrollMsgMobile} className='h-[80%] flex flex-col gap-3 overflow-auto' onClick={() => setshowEmoji(false)} onKeyDown={(e) => { e.key === 'Backspace' && navigate("/") }}>
                             {
                                 messages?.length > 0 && messages?.map(msg => (
                                     msg.sender == Userdata?.user?._id ?
@@ -271,7 +273,7 @@ const Home = () => {
                         </div>
 
                         {/* :: Down :: */}
-                        <div className='flex items-center justify-center ml-2 mr-2 relative'>
+                        <div className='flex items-center justify-center ml-2 mr-2 relative '>
                             <input type="file" accept='image/*' ref={image} onChange={handleUploadImage} hidden />
                             {
                                 frontendImage && <img src={frontendImage} className='h-15 w-15 absolute bottom-17 left-11 cursor-pointer bg-green-200' />
