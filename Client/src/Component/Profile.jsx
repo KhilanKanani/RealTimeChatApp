@@ -70,9 +70,9 @@ const Profile = () => {
             <div className=' flex justify-center items-center relative'>
                 <img src="backArrow.png" className="fixed h-8 w-7 top-2 left-2 cursor-pointer" onClick={handleReturnHome} />
                 <div className='rounded-full bg-white shadow-lg border-4 border-green-800 relative flex justify-center items-center'>
-                    <div className='sm:w-[200px] sm:h-[200px] h-[170px] w-[170px] rounded-full overflow-hidden flex items-center justify-center'>
-                        <img src={frontendImage || "ChatlyDp.png"} className="overflow-hidden sm:w-[200px] sm:h-[200px] h-[170px] w-[170px]" />
-                    </div>
+                    <div className='sm:w-[200px] sm:h-[200px] h-[170px] w-[170px] rounded-full overflow-hidden flex items-center justify-center cursor-pointer'>
+                        <img src={frontendImage || "ChatlyDp.png"} className="overflow-hidden sm:w-[200px] sm:h-[200px] h-[170px] w-[170px] " onClick={() => window.open(frontendImage, "_blank")} />
+                    </div> 
 
                     {/* Handle Upload Image */}
                     <div>
