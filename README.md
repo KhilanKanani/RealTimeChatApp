@@ -2,6 +2,9 @@
 
 A full-stack real-time chat application built using the MERN stack and Socket.io for real-time communication. Users can sign in, log in, chat in real-time, see message history, and more — all in a smooth and responsive UI.
 
+Live : messenger-kk.netlify.app
+
+
 🚀 Features
 * 🔐 User Authentication (Signup/Login)
 * 💬 Real-time messaging with Socket.IO
@@ -19,9 +22,6 @@ A full-stack real-time chat application built using the MERN stack and Socket.io
 * Database: MongoDB
 * Real-time: Socket.IO
 * Authentication: JWT (JSON Web Token)
-
-Live : realtimechatapp-kk.netlify.app
-
 
 https://github.com/user-attachments/assets/723b03be-aeb6-46ce-a487-14619ce6fa11
 
