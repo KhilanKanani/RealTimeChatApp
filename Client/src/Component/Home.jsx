@@ -131,7 +131,7 @@ const Home = () => {
                         {
                             !search && otherUserData?.user.map((otherUser) => (
                                 onlineUser?.includes(otherUser?._id) &&
-                                <div key={otherUser?._id} className="flex flex-col items-center gap-1 py-2" onClick={() => dispatch(setSelectedUser(otherUser))}>
+                                <div key={otherUser?._id} className="flex flex-col items-center gap-1 py-2" onClick={() => (dispatch(setSelectedUser(otherUser)), setSearchTerm(""), setsearch(false))}>
                                     <div className='relative w-10'>
                                         <img src={otherUser?.image} className=" h-10 w-10 rounded-full" />
                                         {onlineUser && <div className='absolute bottom-0.5 left-7 h-2.5 w-2.5 rounded-full bg-green-500'></div>}
@@ -166,7 +166,7 @@ const Home = () => {
                     </div>
 
                     {/* Down */}
-                    <div className='bg-green-200 w-full flex items-center gap-3 h-20 sm:h-15'>
+                    <div className='bg-green-200 w-full flex items-center gap-3 h-17'>
                         <div className='bg-green-300 p-2 h-10 w-10 ml-[8px] rounded-full hover:shadow-2xl shadow-green-900 transition-all duration-400' onClick={() => navigate("/logout")}>
                             <img src="LogoutLogo.jpg" className='h-full w-full cursor-pointer rounded-full' />
                         </div>
@@ -176,7 +176,7 @@ const Home = () => {
             </div>
 
             {/* :: MessageBar :: */}
-            <div className='lg:w-[70%] border-l-1 border-green-500 lg:flex hidden h-[100vh] bg-green-50 flex-col justify-between' onKeyDown={(e) => { e.key === 'Backspace' && (dispatch(setSelectedUser(null)), setfrontendImage(""), setshowEmoji(false)) }}>
+            <div className='lg:w-[70%] border-l-1 border-green-500 lg:flex hidden h-[100vh] bg-green-50 flex-col justify-between'>
                 {/* :: Top :: */}
                 <div>
                     {
