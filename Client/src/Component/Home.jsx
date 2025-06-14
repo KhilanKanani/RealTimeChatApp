@@ -149,7 +149,7 @@ const Home = () => {
                         {
                             filterData?.length > 0 ? filterData.map((user) => {
                                 return (
-                                    <div key={user?._id} className='rounded-lg cursor-pointer border-b-1 border-green-800 flex items-center justify-between' onClick={() => (dispatch(setSelectedUser(user)), setSearchTerm(false) , setfrontendImage(""), setbackendImage(""), setshowEmoji(false))}>
+                                    <div key={user?._id} className='rounded-lg cursor-pointer border-b-1 border-green-800 flex items-center justify-between' onClick={() => (dispatch(setSelectedUser(user)), setSearchTerm(""), setsearch(false), setfrontendImage(""), setbackendImage(""), setshowEmoji(false))}>
                                         <div className='relative w-full flex gap-3 items-center border-green-300  rounded-xl duration-300 transition-all p-1.5 m-1 hover:bg-green-300'>
                                             <img src={user?.image} className="h-11 w-11 rounded-full" />
                                             {onlineUser?.includes(user?._id) && <div className='absolute bottom-2 left-9.5 h-3 w-3 rounded-full bg-green-500'></div>}
